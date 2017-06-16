@@ -1,0 +1,27 @@
+///scr_chat_state 
+if (keyboard_check(vk_anykey)){
+    var xdir = lengthdir_x(8, face*90);
+    var ydir = lengthdir_y(8, face*90);
+    var speaker = instance_place(x+xdir, y+ydir, obj_speaker);
+    if(speaker != noone){
+        //Talk to it
+        with (speaker) {
+            if(!instance_exists(dialogue)){
+                dialogue = instance_create(x + xoffset, y + yoffset, obj_dialogue);
+                dialogue.text = text;
+            }
+            else{
+                dialogue.text_page++;
+                dialogue.text_count = 0;
+                if(dialogue.text_page > array_length_1d(dialogue.text) - 1){ 
+                    with (dialogue){
+                        instance_destroy();
+                    }
+                }
+            }
+        }
+    }
+    else{
+        //Do nothing
+}        
+}
