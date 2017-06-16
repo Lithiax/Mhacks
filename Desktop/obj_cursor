@@ -1,0 +1,23 @@
+(step event)
+///Things the curosr does
+x = mouse_x
+y = mouse_y
+
+//Glow effect
+if(place_meeting(x, y, obj_chrome)){
+    instance_create(obj_chrome.x, obj_chrome.y, obj_glow)
+}
+
+if(place_meeting(x, y, obj_steam)){
+    instance_create(obj_steam.x, obj_steam.y, obj_glow)
+}
+
+if(place_meeting(x, y, obj_messenger)){
+    instance_create(obj_messenger.x, obj_messenger.y, obj_glow)
+}
+
+//Go to application
+///Go to messenger
+if(place_meeting(x, y, obj_messenger) and mouse_check_button_pressed(mb_left)){
+    room_goto(rm_messenger);
+}
