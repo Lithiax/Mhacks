@@ -1,0 +1,11 @@
+(this is basically how room changing works so far)
+(make cursor persistent)
+
+--Example--
+obj_messenger
+
+(step event)
+///Go to messenger
+if(place_meeting(x, y, obj_messenger) and mouse_check_button_pressed(mb_left)){
+    room_goto(rm_messenger);
+}
