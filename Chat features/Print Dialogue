@@ -1,3 +1,5 @@
+--obj_textbox--
+(Draw GUI event)
 ///Draw dialogue
 //Get the last space
 if (string_char_at(text[text_page], text_count) == " "){
